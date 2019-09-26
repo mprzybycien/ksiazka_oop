@@ -12,6 +12,13 @@ class KsiazkaArdesowa
 
     vector <Uzytkownik> uzytkownicy;
 
-public:
+    Uzytkownik podajDaneNowegoUzytkownika();
+    int pobierzIdNowegoUzytkownika();
+    string wczytajLinie();
+    bool czyIstniejeLogin(string login);
 
+
+public:
+    void rejestracjaUzytkownika();
+    void wypiszWszyskieKontakty();
 };
