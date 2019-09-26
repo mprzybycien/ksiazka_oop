@@ -66,3 +66,8 @@ void UzytkownikManager::wypiszWszyskieKontakty()
     }
 
 }
+
+void UzytkownikManager::wczytajUzytkownikowZPliku()
+{
+    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+}

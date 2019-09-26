@@ -25,6 +25,7 @@ class UzytkownikManager
 public:
     void rejestracjaUzytkownika();
     void wypiszWszyskieKontakty();
+    void wczytajUzytkownikowZPliku();
 };
 
 #endif
