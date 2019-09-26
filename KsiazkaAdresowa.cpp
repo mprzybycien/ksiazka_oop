@@ -4,11 +4,17 @@
 
 using namespace std;
 
+KsiazkaArdesowa::KsiazkaArdesowa()
+{
+    nazwaPlikuZUzytkownikami = "Uzytkownicy.txt";
+}
+
 void KsiazkaArdesowa::rejestracjaUzytkownika()
 {
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
 
     uzytkownicy.push_back(uzytkownik);
+    dopiszUzytkownikaDoPliku(uzytkownik);
 
     cout << endl << "Konto zalozono pomyslnie" << endl << endl;
     system("pause");
@@ -73,6 +79,57 @@ void KsiazkaArdesowa::wypiszWszyskieKontakty()
 
 }
 
+void KsiazkaArdesowa::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
+{
+    fstream plikTekstowy;
+    string liniaZDanymiUzytkownika = "";
+    plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::app);
 
+    if (plikTekstowy.good() == true)
+    {
+        liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(uzytkownik);
+
+        if (czyPlikJestPusty(plikTekstowy) == true)
+        {
+            plikTekstowy << liniaZDanymiUzytkownika;
+        }
+        else
+        {
+            plikTekstowy << endl << liniaZDanymiUzytkownika ;
+        }
+        plikTekstowy.close();
+    }
+    else
+        cout << "Nie udalo sie otworzyc pliku " << nazwaPlikuZUzytkownikami << " i zapisac w nim danych." << endl;
+
+}
+
+string KsiazkaArdesowa::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik)
+{
+    string liniaZDanymiUzytkownika = "";
+
+    liniaZDanymiUzytkownika += konwerjsaIntNaString(uzytkownik.pobierzId())+ '|';
+    liniaZDanymiUzytkownika += uzytkownik.pobierzLogin() + '|';
+    liniaZDanymiUzytkownika += uzytkownik.pobierzHaslo() + '|';
+
+    return liniaZDanymiUzytkownika;
+}
+
+string KsiazkaArdesowa::konwerjsaIntNaString(int liczba)
+{
+    ostringstream ss;
+    ss << liczba;
+    string str = ss.str();
+    return str;
+}
+
+bool KsiazkaArdesowa::czyPlikJestPusty(fstream &plikTekstowy)
+{
+    plikTekstowy.seekg(0, ios::end);
+    if (plikTekstowy.tellg() == 0)
+        return true;
+    else
+        return false;
+}
 
 
