@@ -1,4 +1,8 @@
+#ifndef UZYTKOWNIK_H
+#define UZYTKOWNIK_H // Jesli nag³ówek jest zaimplementowany w programie wiêcej ni¿ jeden raz
+
 #include <iostream>
+#include "Uzytkownik.h"
 
 using namespace std;
 
@@ -17,3 +21,5 @@ public:
     string pobierzLogin();
     string pobierzHaslo();
 };
+
+#endif // UZYTKOWNIK_H
