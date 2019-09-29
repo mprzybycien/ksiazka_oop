@@ -1,4 +1,5 @@
 bin/
 obj/
-ksiazka_OOP.*
+ksiazka_oop.*
 Uzytkownicy.txt
+ks-strukt.cpp
