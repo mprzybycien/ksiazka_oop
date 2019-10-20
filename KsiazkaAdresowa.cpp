@@ -14,3 +14,8 @@ void KsiazkaAdresowa::wypiszWszyskieKontakty()
 {
     uzytkownikManager.wypiszWszyskieKontakty();
 }
+
+void KsiazkaAdresowa::logowanieUzytkownika()
+{
+    uzytkownikManager.logowanieUzytkownika();
+}

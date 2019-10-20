@@ -27,6 +27,7 @@ public:
     void rejestracjaUzytkownika();
     void wypiszWszyskieKontakty();
     void wczytajUzytkownikowZPliku();
+    int logowanieUzytkownika();
 };
 
 #endif

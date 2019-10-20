@@ -20,6 +20,7 @@ public:
     }
     void rejestracjaUzytkownika();
     void wypiszWszyskieKontakty();
+    void logowanieUzytkownika();
 };
 
 #endif
