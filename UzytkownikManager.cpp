@@ -74,7 +74,7 @@ void UzytkownikManager::wczytajUzytkownikowZPliku()
 
 int UzytkownikManager::logowanieUzytkownika()
 {
-    Uzytkownik uzytkownik;
+
     string log = "", pass = "";
 
     cout << endl << "Podaj login: ";
@@ -94,7 +94,8 @@ int UzytkownikManager::logowanieUzytkownika()
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return itr -> pobierzId();
+                    idZalogowanegoUzytkownika = itr -> pobierzId();
+                    return idZalogowanegoUzytkownika;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
@@ -107,4 +108,30 @@ int UzytkownikManager::logowanieUzytkownika()
     system("pause");
     return 0;
 }
+
+void UzytkownikManager::zmianaHaslaZalogowanegoUzytkownika()
+{
+    string noweHaslo = "";
+    cout << "Podaj nowe haslo: ";
+    noweHaslo = MetodyPomocnicze::wczytajLinie();
+
+    for (vector <Uzytkownik>::iterator itr = uzytkownicy.begin(); itr != uzytkownicy.end(); itr++)
+    {
+        if (itr -> pobierzId() == idZalogowanegoUzytkownika)
+        {
+            itr -> ustawHaslo(noweHaslo);
+            cout << "Haslo zostalo zmienione." << endl << endl;
+            system("pause");
+        }
+    }
+/*
+        for (vector <Uzytkownik>::iterator itr = uzytkownicy.begin(); itr != uzytkownicy.end(); itr++)
+        {
+            cout << itr -> pobierzHaslo() <<endl;
+        }
+*/
+    system("pause");
+    plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
+}
+
 
