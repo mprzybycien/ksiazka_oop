@@ -2,12 +2,10 @@
 #define KSIAZKAADRESOWA_H
 
 #include <iostream>
-#include <vector>
 #include "UzytkownikManager.h"
 #include "PlikZAdresatami.h"
 #include "AdresatManager.h"
 #include <fstream>
-#include <sstream>
 
 using namespace std;
 

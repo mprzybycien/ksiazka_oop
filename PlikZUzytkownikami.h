@@ -6,7 +6,6 @@
 #include "Uzytkownik.h"
 #include "MetodyPomocnicze.h"
 #include <fstream>
-#include <sstream>
 #include <cstdlib>
 
 using namespace std;

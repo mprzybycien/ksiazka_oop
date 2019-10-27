@@ -4,9 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
-#include <sstream>
 #include <windows.h>
-
 #include "Adresat.h"
 #include "UzytkownikManager.h"
 #include "MetodyPomocnicze.h"

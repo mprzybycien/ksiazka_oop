@@ -1,6 +1,5 @@
 #include <iostream>
 #include "KsiazkaAdresowa.h"
-#include "AdresatManager.h"
 
 using namespace std;
 

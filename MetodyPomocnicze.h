@@ -2,9 +2,7 @@
 #define METODYPOMOCNICZE_H
 
 #include <iostream>
-#include <vector>
 #include "Uzytkownik.h"
-
 #include <fstream>
 #include <sstream>
 

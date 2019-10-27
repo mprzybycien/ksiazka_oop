@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>30</x>
-      <y>0</y>
+      <x>0</x>
+      <y>20</y>
       <w>220</w>
       <h>130</h>
     </coordinates>
@@ -22,8 +22,8 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>30</x>
-      <y>320</y>
+      <x>0</x>
+      <y>340</y>
       <w>180</w>
       <h>170</h>
     </coordinates>
@@ -38,8 +38,8 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>220</x>
-      <y>320</y>
+      <x>190</x>
+      <y>340</y>
       <w>300</w>
       <h>200</h>
     </coordinates>
@@ -62,8 +62,8 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>530</x>
-      <y>320</y>
+      <x>500</x>
+      <y>340</y>
       <w>290</w>
       <h>160</h>
     </coordinates>
@@ -82,8 +82,8 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>30</x>
-      <y>170</y>
+      <x>0</x>
+      <y>190</y>
       <w>210</w>
       <h>90</h>
     </coordinates>
@@ -98,8 +98,8 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>30</x>
-      <y>600</y>
+      <x>0</x>
+      <y>620</y>
       <w>180</w>
       <h>170</h>
     </coordinates>
@@ -117,18 +117,25 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>220</x>
-      <y>600</y>
+      <x>190</x>
+      <y>620</y>
       <w>300</w>
       <h>200</h>
     </coordinates>
     <panel_attributes>AdresatManager
 --
-- idZalogowanegoUzytkownika: integer
 - adresaci: vector &lt;Adresat&gt;
 --
-+ dodajAdresata(): void
 - podajDaneNowegoAdresata(): void
+- dopiszAdresataDOPliku(): void
+- zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami: string
+- czyPlikJestPusty
+- zamienPierwszaLitereNaDuzaAPozostaleNaMale
++ wczytajAdresatowZalogowanegoUzytkownikaZPliku(): void
++ dodajAdresata(): void
++ wypiszWszyskichAdresatow(): void
+
+
 
 
 </panel_attributes>
@@ -137,17 +144,23 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>550</x>
-      <y>600</y>
+      <x>520</x>
+      <y>620</y>
       <w>290</w>
-      <h>160</h>
+      <h>200</h>
     </coordinates>
     <panel_attributes>PlikZAdresatami
 --
-- nazwaPlikuZUzytkownikami: string
-- plikTekstowy: fstream
+- idOstatniegoAdresata: int
 --
-- dopiszAdresataDoPliku(): void</panel_attributes>
+- pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(): int
+- pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(): int
+- pobierzLiczbe(): string
+- pobierzDaneAdresata(): Adresat
++ wczytajAdresatowZalogowanegoUzytkownikaZPliku(): vector &lt;Adresat&gt;
++ pobierzIdZalogowanegoZPliku(): int
++ pobierzIdOstatniegoAdresata(): int
++ ustawIdOstatniegoAdresata(): void</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
