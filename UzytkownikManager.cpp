@@ -64,7 +64,6 @@ void UzytkownikManager::wypiszWszyskieKontakty()
        cout << uzytkownicy[i].pobierzLogin() <<endl;
        cout << uzytkownicy[i].pobierzHaslo() <<endl<<endl;
     }
-
 }
 
 void UzytkownikManager::wczytajUzytkownikowZPliku()
@@ -95,6 +94,7 @@ int UzytkownikManager::logowanieUzytkownika()
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
                     idZalogowanegoUzytkownika = itr -> pobierzId();
+                    zapiszIdZalogowanegoUzytkownikaDoPliku();
                     return idZalogowanegoUzytkownika;
                 }
             }
@@ -127,4 +127,16 @@ void UzytkownikManager::zmianaHaslaZalogowanegoUzytkownika()
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
 
+int UzytkownikManager::pobierzIdZalogowanegoUzytkownika()
+{
+    return idZalogowanegoUzytkownika;
+}
+
+void UzytkownikManager::zapiszIdZalogowanegoUzytkownikaDoPliku()
+{
+    fstream plikTekstowy;
+    plikTekstowy.open("IdZalogowanego.txt", ios::out);
+    plikTekstowy << idZalogowanegoUzytkownika;
+    plikTekstowy.close();
+}
 

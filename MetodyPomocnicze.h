@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "Uzytkownik.h"
+
 #include <fstream>
 #include <sstream>
 
@@ -11,5 +12,5 @@ class MetodyPomocnicze
 public:
     static string wczytajLinie();
     static string konwerjsaIntNaString(int liczba);
-
+    static int konwersjaStringNaInt(string liczba);
 };

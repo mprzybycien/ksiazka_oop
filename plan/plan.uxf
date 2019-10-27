@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>60</x>
-      <y>60</y>
+      <x>30</x>
+      <y>0</y>
       <w>220</w>
       <h>130</h>
     </coordinates>
@@ -22,8 +22,8 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>660</x>
-      <y>60</y>
+      <x>30</x>
+      <y>320</y>
       <w>180</w>
       <h>170</h>
     </coordinates>
@@ -38,8 +38,8 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>300</x>
-      <y>60</y>
+      <x>220</x>
+      <y>320</y>
       <w>300</w>
       <h>200</h>
     </coordinates>
@@ -62,8 +62,8 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>660</x>
-      <y>260</y>
+      <x>530</x>
+      <y>320</y>
       <w>290</w>
       <h>160</h>
     </coordinates>
@@ -82,8 +82,8 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>660</x>
-      <y>460</y>
+      <x>30</x>
+      <y>170</y>
       <w>210</w>
       <h>90</h>
     </coordinates>
@@ -93,6 +93,61 @@ KsiazkaAdresowa()
 + konwerjsaIntNaString: string
 + wczytajLinie: string
 </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>600</y>
+      <w>180</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>Adresat
+--
+- id: integer
+- idUzytkownika
+- imie: string
+- nazwisko: string
+- numerTelefon: string
+- email: string
+- adres: string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>220</x>
+      <y>600</y>
+      <w>300</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>AdresatManager
+--
+- idZalogowanegoUzytkownika: integer
+- adresaci: vector &lt;Adresat&gt;
+--
++ dodajAdresata(): void
+- podajDaneNowegoAdresata(): void
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>550</x>
+      <y>600</y>
+      <w>290</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>PlikZAdresatami
+--
+- nazwaPlikuZUzytkownikami: string
+- plikTekstowy: fstream
+--
+- dopiszAdresataDoPliku(): void</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

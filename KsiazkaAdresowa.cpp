@@ -24,3 +24,13 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
 {
     uzytkownikManager.zmianaHaslaZalogowanegoUzytkownika();
 }
+
+void KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
+{
+    adresatManager.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+}
+
+void KsiazkaAdresowa::wypiszWszyskichAdresatow()
+{
+    adresatManager.wypiszWszyskichAdresatow();
+}
