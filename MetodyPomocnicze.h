@@ -1,3 +1,6 @@
+#ifndef METODYPOMOCNICZE_H
+#define METODYPOMOCNICZE_H
+
 #include <iostream>
 #include <vector>
 #include "Uzytkownik.h"
@@ -14,3 +17,5 @@ public:
     static string konwerjsaIntNaString(int liczba);
     static int konwersjaStringNaInt(string liczba);
 };
+
+#endif

@@ -18,6 +18,8 @@ int main()
     //ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
     ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     ksiazkaAdresowa.wypiszWszyskichAdresatow();
+    ksiazkaAdresowa.dodajAdresata();
+    ksiazkaAdresowa.wypiszWszyskichAdresatow();
 
 
     return 0;
