@@ -6,6 +6,7 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
     string daneOstaniegoAdresataWPliku = "";
     fstream plikTekstowy;
     Adresat bierzacyAdresat;
+
     vector <Adresat> wektorAdresatow;
 
     plikTekstowy.open("adresaci.txt", ios::in);
@@ -14,7 +15,7 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
     {
         while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami))
         {
-            if(pobierzIdZalogowanegoZPliku() == pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(daneJednegoAdresataOddzielonePionowymiKreskami))
+            if(uzytkownikManager.pobierzIdZalogowanegoUzytkownika() == pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(daneJednegoAdresataOddzielonePionowymiKreskami))
             {
                 bierzacyAdresat = pobierzDaneAdresata(daneJednegoAdresataOddzielonePionowymiKreskami);
                 wektorAdresatow.push_back(bierzacyAdresat);
