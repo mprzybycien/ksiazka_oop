@@ -77,6 +77,7 @@ void AdresatManager::dopiszAdresataDoPliku(Adresat adresat)
 {
     string liniaZDanymiAdresata = "";
     fstream plikTekstowy;
+    //string nazwaPliku = PlikZAdresatami.pobierzNazwePlikuZAdresatami();
     plikTekstowy.open("adresaci.txt", ios::out | ios::app);
 
     if (plikTekstowy.good() == true)

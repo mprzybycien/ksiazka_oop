@@ -15,7 +15,7 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
 
     vector <Adresat> wektorAdresatow;
 
-    plikTekstowy.open("adresaci.txt", ios::in);
+    plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::in);
 
     if (plikTekstowy.good() == true)
     {
@@ -131,4 +131,9 @@ void PlikZAdresatami::ustawIdZalogowanego(int zalogowany)
 int PlikZAdresatami::pobierzIdZalogowanego()
 {
     return idZalogowanego;
+}
+
+string PlikZAdresatami::pobierzNazwePlikuZAdresatami()
+{
+    return nazwaPlikuZAdresatami;
 }

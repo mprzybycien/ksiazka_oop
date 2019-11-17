@@ -15,10 +15,8 @@ class KsiazkaAdresowa
     AdresatManager adresatManager;
 
 public:
-    KsiazkaAdresowa( string nazwaPlikuZUzytkownikami): uzytkownikManager(nazwaPlikuZUzytkownikami)
-    {
-        uzytkownikManager.wczytajUzytkownikowZPliku();
-    }
+    KsiazkaAdresowa( string NAZWAPLIKUZUZYTKOWNIKAMI, string NAZWAPLIKUZADRESATAMI):
+    uzytkownikManager(nazwaPlikuZUzytkownikami), adresatManager(nazwaPlikuZAdresatami){}
     void rejestracjaUzytkownika();
     void wypiszWszyskieKontakty();
     void logowanieUzytkownika();

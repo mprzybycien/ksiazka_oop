@@ -79,7 +79,7 @@ int UzytkownikManager::logowanieUzytkownika()
     cout << endl << "Podaj login: ";
     log = MetodyPomocnicze::wczytajLinie();
 
-    PlikZAdresatami plikZAdresatami;
+    //PlikZAdresatami plikZAdresatami;
     //int idZalogowanegoUzytkownika;
     vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
     while (itr != uzytkownicy.end())
@@ -118,7 +118,7 @@ void UzytkownikManager::zmianaHaslaZalogowanegoUzytkownika()
 {
     string noweHaslo = "";
     cout << "Podaj nowe haslo: ";
-    PlikZAdresatami plikZAdresatami;
+    //PlikZAdresatami plikZAdresatami;
     noweHaslo = MetodyPomocnicze::wczytajLinie();
     for (vector <Uzytkownik>::iterator itr = uzytkownicy.begin(); itr != uzytkownicy.end(); itr++)
     {

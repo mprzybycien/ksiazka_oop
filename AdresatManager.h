@@ -24,6 +24,7 @@ bool czyPlikJestPusty(fstream &plikTekstowy);
 string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
 
 public:
+AdresatManager(string NAZWAPLIKUZADRESATAMI) : plikZAdresatami(nazwaPlikuZAdresatami) {};
 
 void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
 void wypiszWszyskichAdresatow();

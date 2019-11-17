@@ -14,6 +14,7 @@ using namespace std;
 class PlikZAdresatami
     {
     Adresat adresat;
+    const string nazwaPlikuZAdresatami;
     int idOstatniegoAdresata;
     int idZalogowanego;
 
@@ -24,12 +25,13 @@ class PlikZAdresatami
 
     public:
 
+    PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI) {};
     vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     int pobierzIdOstatniegoAdresata();
     void ustawIdOstatniegoAdresata(int nowyOstatniAdresat);
     void ustawIdZalogowanego(int zalogowany);
     int pobierzIdZalogowanego();
-
+    string pobierzNazwePlikuZAdresatami();
     };
 
 #endif
