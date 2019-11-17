@@ -15,8 +15,7 @@ class PlikZAdresatami
     {
     Adresat adresat;
     int idOstatniegoAdresata;
-
-    UzytkownikManager uzytkownikManager();
+    int idZalogowanego;
 
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
@@ -26,9 +25,10 @@ class PlikZAdresatami
     public:
 
     vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-    int pobierzIdZalogowanegoZPliku();
     int pobierzIdOstatniegoAdresata();
     void ustawIdOstatniegoAdresata(int nowyOstatniAdresat);
+    void ustawIdZalogowanego(int zalogowany);
+    int pobierzIdZalogowanego();
 
     };
 

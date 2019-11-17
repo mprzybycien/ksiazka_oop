@@ -79,6 +79,8 @@ int UzytkownikManager::logowanieUzytkownika()
     cout << endl << "Podaj login: ";
     log = MetodyPomocnicze::wczytajLinie();
 
+    PlikZAdresatami plikZAdresatami;
+    //int idZalogowanegoUzytkownika;
     vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
     while (itr != uzytkownicy.end())
     {
@@ -93,9 +95,12 @@ int UzytkownikManager::logowanieUzytkownika()
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    idZalogowanegoUzytkownika = itr -> pobierzId();
-                    zapiszIdZalogowanegoUzytkownikaDoPliku();
-                    return idZalogowanegoUzytkownika;
+                    //idZalogowanegoUzytkownika = itr -> pobierzId();
+                    cout << "id Zalgoowanego = " << itr -> pobierzId() <<endl;
+                    system("pause");
+                    plikZAdresatami.ustawIdZalogowanego(itr -> pobierzId());
+                    //zapiszIdZalogowanegoUzytkownikaDoPliku();
+                    return 0;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
@@ -113,10 +118,11 @@ void UzytkownikManager::zmianaHaslaZalogowanegoUzytkownika()
 {
     string noweHaslo = "";
     cout << "Podaj nowe haslo: ";
+    PlikZAdresatami plikZAdresatami;
     noweHaslo = MetodyPomocnicze::wczytajLinie();
     for (vector <Uzytkownik>::iterator itr = uzytkownicy.begin(); itr != uzytkownicy.end(); itr++)
     {
-        if (itr -> pobierzId() == idZalogowanegoUzytkownika)
+        if (itr -> pobierzId() == plikZAdresatami.pobierzIdZalogowanego())
         {
             itr -> ustawHaslo(noweHaslo);
             cout << "Haslo zostalo zmienione." << endl << endl;
@@ -126,7 +132,7 @@ void UzytkownikManager::zmianaHaslaZalogowanegoUzytkownika()
     system("pause");
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
-
+/*
 int UzytkownikManager::pobierzIdZalogowanegoUzytkownika()
 {
     return idZalogowanegoUzytkownika;
@@ -139,4 +145,4 @@ void UzytkownikManager::zapiszIdZalogowanegoUzytkownikaDoPliku()
     plikTekstowy << idZalogowanegoUzytkownika;
     plikTekstowy.close();
 }
-
+*/

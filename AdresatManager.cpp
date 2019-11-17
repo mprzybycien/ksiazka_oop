@@ -26,7 +26,7 @@ void AdresatManager::dodajAdresata()
     //system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
     int zalogowany, ostatni;
-    zalogowany = plikZAdresatami.pobierzIdZalogowanegoZPliku();
+    zalogowany = plikZAdresatami.pobierzIdZalogowanego();
     ostatni = plikZAdresatami.pobierzIdOstatniegoAdresata();
 
     adresat = podajDaneNowegoAdresata(zalogowany, ostatni);

@@ -5,6 +5,7 @@
 #include <vector>
 #include "Uzytkownik.h"
 #include "PlikZUzytkownikami.h"
+#include "PlikZAdresatami.h"
 #include <fstream>
 #include <windows.h>
 
@@ -12,13 +13,14 @@ using namespace std;
 
 class UzytkownikManager
 {
-    int idZalogowanegoUzytkownika;
+
     vector <Uzytkownik> uzytkownicy;
     PlikZUzytkownikami plikZUzytkownikami;
+
     Uzytkownik podajDaneNowegoUzytkownika();
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
-    void zapiszIdZalogowanegoUzytkownikaDoPliku();
+    //void zapiszIdZalogowanegoUzytkownikaDoPliku();
 
 public:
     UzytkownikManager(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami){};
@@ -27,7 +29,7 @@ public:
     void wczytajUzytkownikowZPliku();
     int logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
-    int pobierzIdZalogowanegoUzytkownika();
+    //int pobierzIdZalogowanegoUzytkownika();
 };
 
 #endif

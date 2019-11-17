@@ -7,6 +7,12 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
     fstream plikTekstowy;
     Adresat bierzacyAdresat;
 
+    cout << "id Zalogowanego = " << idZalogowanego <<endl;
+    system("pause");
+
+    cout << "id Ostatniego= " << idOstatniegoAdresata <<endl;
+    system("pause");
+
     vector <Adresat> wektorAdresatow;
 
     plikTekstowy.open("adresaci.txt", ios::in);
@@ -15,7 +21,7 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
     {
         while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami))
         {
-            if(uzytkownikManager.pobierzIdZalogowanegoUzytkownika() == pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(daneJednegoAdresataOddzielonePionowymiKreskami))
+            if(idZalogowanego == pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(daneJednegoAdresataOddzielonePionowymiKreskami))
             {
                 bierzacyAdresat = pobierzDaneAdresata(daneJednegoAdresataOddzielonePionowymiKreskami);
                 wektorAdresatow.push_back(bierzacyAdresat);
@@ -103,24 +109,6 @@ Adresat PlikZAdresatami::pobierzDaneAdresata(string daneAdresataOddzielonePionow
     return adresat;
 }
 
-int PlikZAdresatami::pobierzIdZalogowanegoZPliku()
-{
-    int idZalogowanegoUzytkownikaZPliku;
-    string idZalgowanego, liniaTekstu;
-    fstream plikTekstowy;
-    plikTekstowy.open("IdZalogowanego.txt", ios::in);
-
-    if (plikTekstowy.good() == true)
-    {
-        while (getline(plikTekstowy, liniaTekstu))
-        {
-            idZalogowanegoUzytkownikaZPliku = MetodyPomocnicze::konwersjaStringNaInt(liniaTekstu);
-        }
-    plikTekstowy.close();
-    }
-
-return idZalogowanegoUzytkownikaZPliku;
-}
 int PlikZAdresatami::pobierzIdOstatniegoAdresata()
 {
     return idOstatniegoAdresata;
@@ -131,3 +119,16 @@ void PlikZAdresatami::ustawIdOstatniegoAdresata(int nowyOstatniAdresat)
     idOstatniegoAdresata = nowyOstatniAdresat;
 }
 
+void PlikZAdresatami::ustawIdZalogowanego(int zalogowany)
+{
+    cout << "id Zalgoowanego = " << zalogowany <<endl;
+    system("pause");
+    idZalogowanego = zalogowany;
+    cout << "id Zalgoowanego = " << idZalogowanego <<endl;
+    system("pause");
+}
+
+int PlikZAdresatami::pobierzIdZalogowanego()
+{
+    return idZalogowanego;
+}
