@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <windows.h>
 #include "PlikZAdresatami.h"
+#include "PlikZUzytkownikami.h"
 #include "Adresat.h"
 #include "MetodyPomocnicze.h"
 
@@ -15,6 +16,7 @@ using namespace std;
 class AdresatManager
 {
 PlikZAdresatami plikZAdresatami;
+
 vector <Adresat> adresaci;
 
 Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
@@ -24,7 +26,7 @@ bool czyPlikJestPusty(fstream &plikTekstowy);
 string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
 
 public:
-AdresatManager(string NAZWAPLIKUZADRESATAMI) : plikZAdresatami(nazwaPlikuZAdresatami) {};
+AdresatManager(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami){};
 
 void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
 void wypiszWszyskichAdresatow();

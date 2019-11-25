@@ -18,10 +18,9 @@ class PlikZUzytkownikami
      bool czyPlikJestPusty();
 
  public:
-
+    PlikZUzytkownikami(string NAZWAPLIKUZUZYTKOWNIKAMI) : nazwaPlikuZUzytkownikami(NAZWAPLIKUZUZYTKOWNIKAMI){};
     void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> &uzytkownicy);
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
-    PlikZUzytkownikami(string NAZWAPLIKUZUZYTKOWNIKAMI) : nazwaPlikuZUzytkownikami(NAZWAPLIKUZUZYTKOWNIKAMI) {};
     vector <Uzytkownik> wczytajUzytkownikowZPliku();
 };
 

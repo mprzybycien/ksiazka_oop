@@ -6,7 +6,6 @@
 #include <fstream>
 #include <windows.h>
 #include "Adresat.h"
-#include "UzytkownikManager.h"
 #include "MetodyPomocnicze.h"
 
 using namespace std;

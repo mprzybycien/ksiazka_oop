@@ -80,7 +80,6 @@ int UzytkownikManager::logowanieUzytkownika()
     log = MetodyPomocnicze::wczytajLinie();
 
     //PlikZAdresatami plikZAdresatami;
-    //int idZalogowanegoUzytkownika;
     vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
     while (itr != uzytkownicy.end())
     {

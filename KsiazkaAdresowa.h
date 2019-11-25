@@ -1,6 +1,5 @@
 #ifndef KSIAZKAADRESOWA_H
 #define KSIAZKAADRESOWA_H
-
 #include <iostream>
 #include "UzytkownikManager.h"
 #include "PlikZAdresatami.h"
@@ -15,8 +14,9 @@ class KsiazkaAdresowa
     AdresatManager adresatManager;
 
 public:
-    KsiazkaAdresowa( string NAZWAPLIKUZUZYTKOWNIKAMI, string NAZWAPLIKUZADRESATAMI):
+    KsiazkaAdresowa( string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami):
     uzytkownikManager(nazwaPlikuZUzytkownikami), adresatManager(nazwaPlikuZAdresatami){}
+
     void rejestracjaUzytkownika();
     void wypiszWszyskieKontakty();
     void logowanieUzytkownika();

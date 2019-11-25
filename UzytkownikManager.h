@@ -16,18 +16,18 @@ class UzytkownikManager
 
     vector <Uzytkownik> uzytkownicy;
     PlikZUzytkownikami plikZUzytkownikami;
-
     PlikZAdresatami plikZAdresatami;
-
     Uzytkownik podajDaneNowegoUzytkownika();
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
 
 public:
-    UzytkownikManager(string NAZWAPLIKUZUZYTKOWNIKAMI) : plikZUzytkownikami(nazwaPlikuZUzytkownikami)
+    UzytkownikManager(string nazwaPlikuZUzytkownikami) :
+        plikZUzytkownikami(nazwaPlikuZUzytkownikami)
     {
     wczytajUzytkownikowZPliku();
     }
+
     void rejestracjaUzytkownika();
     void wypiszWszyskieKontakty();
     void wczytajUzytkownikowZPliku();
