@@ -31,7 +31,6 @@ public:
     void wypiszWszyskieKontakty();
     void logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
-    //void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     void wypiszWszyskichAdresatow();
     void dodajAdresata();
 

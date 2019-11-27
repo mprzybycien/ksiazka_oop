@@ -22,10 +22,10 @@ PlikZAdresatami plikZAdresatami;
 vector <Adresat> adresaci;
 
 Adresat podajDaneNowegoAdresata(int idOstatniegoAdresata); /*Podaæ metode do pobierania Id ostatniego adresata*/
-void dopiszAdresataDoPliku(Adresat adresat);
-string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
-bool czyPlikJestPusty(fstream &plikTekstowy);
+
 string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
+bool czyPlikJestPusty(fstream &plikTekstowy);
+
 
 public:
 AdresatManager(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika) :
