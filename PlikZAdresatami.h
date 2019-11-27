@@ -7,6 +7,7 @@
 #include <windows.h>
 #include "Adresat.h"
 #include "MetodyPomocnicze.h"
+#include "UzytkownikManager.h"
 
 using namespace std;
 
@@ -16,6 +17,7 @@ class PlikZAdresatami
     const string nazwaPlikuZAdresatami;
     int idOstatniegoAdresata;
     int idZalogowanego;
+    //UzytkownikManager uzytkownikManager;
 
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);

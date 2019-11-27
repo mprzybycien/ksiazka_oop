@@ -94,10 +94,10 @@ int UzytkownikManager::logowanieUzytkownika()
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    //idZalogowanegoUzytkownika = itr -> pobierzId();
+                    idZalogowanegoUzytkownika = itr -> pobierzId();
                     cout << "id Zalgoowanego = " << itr -> pobierzId() <<endl;
                     system("pause");
-                    plikZAdresatami.ustawIdZalogowanego(itr -> pobierzId());
+                    //plikZAdresatami.ustawIdZalogowanego(itr -> pobierzId());
                     //zapiszIdZalogowanegoUzytkownikaDoPliku();
                     return 0;
                 }
@@ -121,7 +121,7 @@ void UzytkownikManager::zmianaHaslaZalogowanegoUzytkownika()
     noweHaslo = MetodyPomocnicze::wczytajLinie();
     for (vector <Uzytkownik>::iterator itr = uzytkownicy.begin(); itr != uzytkownicy.end(); itr++)
     {
-        if (itr -> pobierzId() == plikZAdresatami.pobierzIdZalogowanego())
+        if (itr -> pobierzId() == idZalogowanegoUzytkownika /*plikZAdresatami.pobierzIdZalogowanego()*/)
         {
             itr -> ustawHaslo(noweHaslo);
             cout << "Haslo zostalo zmienione." << endl << endl;

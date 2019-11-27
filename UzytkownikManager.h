@@ -13,13 +13,13 @@ using namespace std;
 
 class UzytkownikManager
 {
-
     vector <Uzytkownik> uzytkownicy;
     PlikZUzytkownikami plikZUzytkownikami;
-    PlikZAdresatami plikZAdresatami;
+    //PlikZAdresatami plikZAdresatami;
     Uzytkownik podajDaneNowegoUzytkownika();
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
+    int idZalogowanegoUzytkownika;
 
 public:
     UzytkownikManager(string nazwaPlikuZUzytkownikami) :
