@@ -1,17 +1,11 @@
 #include "PlikZAdresatami.h"
 
-vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
+vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika)
 {
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
     string daneOstaniegoAdresataWPliku = "";
     fstream plikTekstowy;
     Adresat bierzacyAdresat;
-
-    cout << "id Zalogowanego = " << idZalogowanego <<endl;
-    system("pause");
-
-    cout << "id Ostatniego= " << idOstatniegoAdresata <<endl;
-    system("pause");
 
     vector <Adresat> wektorAdresatow;
 
@@ -21,7 +15,7 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
     {
         while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami))
         {
-            if(idZalogowanego == pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(daneJednegoAdresataOddzielonePionowymiKreskami))
+            if(idZalogowanegoUzytkownika == pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(daneJednegoAdresataOddzielonePionowymiKreskami))
             {
                 bierzacyAdresat = pobierzDaneAdresata(daneJednegoAdresataOddzielonePionowymiKreskami);
                 wektorAdresatow.push_back(bierzacyAdresat);
@@ -119,19 +113,6 @@ void PlikZAdresatami::ustawIdOstatniegoAdresata(int nowyOstatniAdresat)
     idOstatniegoAdresata = nowyOstatniAdresat;
 }
 
-void PlikZAdresatami::ustawIdZalogowanego(int zalogowany)
-{
-    cout << "id Zalgoowanego = " << zalogowany <<endl;
-    system("pause");
-    idZalogowanego = zalogowany;
-    cout << "id Zalgoowanego = " << idZalogowanego <<endl;
-    system("pause");
-}
-
-int PlikZAdresatami::pobierzIdZalogowanego()
-{
-    return idZalogowanego;
-}
 
 string PlikZAdresatami::pobierzNazwePlikuZAdresatami()
 {

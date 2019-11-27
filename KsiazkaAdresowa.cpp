@@ -18,24 +18,28 @@ void KsiazkaAdresowa::wypiszWszyskieKontakty()
 void KsiazkaAdresowa::logowanieUzytkownika()
 {
     uzytkownikManager.logowanieUzytkownika();
+    if (uzytkownikManager.czyUzytkownikSieZalogowal())
+    {
+        adresatManager = new AdresatManager(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
+    }
 }
 
 void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
 {
     uzytkownikManager.zmianaHaslaZalogowanegoUzytkownika();
 }
-
+/*
 void KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
 {
-    adresatManager.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    adresatManager.wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
 }
-
+*/
 void KsiazkaAdresowa::wypiszWszyskichAdresatow()
 {
-    adresatManager.wypiszWszyskichAdresatow();
+    adresatManager -> wypiszWszyskichAdresatow();
 }
 
 void KsiazkaAdresowa::dodajAdresata()
 {
-    adresatManager.dodajAdresata();
+    adresatManager -> dodajAdresata();
 }

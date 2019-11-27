@@ -1,9 +1,5 @@
 #include "AdresatManager.h"
 
-void AdresatManager::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
-{
-    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-}
 
 void AdresatManager::wypiszWszyskichAdresatow()
 {
@@ -26,10 +22,9 @@ void AdresatManager::dodajAdresata()
     //system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
     int zalogowany, ostatni;
-    zalogowany = plikZAdresatami.pobierzIdZalogowanego();
-    ostatni = plikZAdresatami.pobierzIdOstatniegoAdresata();
 
-    adresat = podajDaneNowegoAdresata(zalogowany, ostatni);
+    adresat = podajDaneNowegoAdresata(plikZAdresatami.pobierzIdOstatniegoAdresata());
+
 
     adresaci.push_back(adresat);
     dopiszAdresataDoPliku(adresat);
@@ -37,12 +32,12 @@ void AdresatManager::dodajAdresata()
 
 }
 
-Adresat AdresatManager::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
+Adresat AdresatManager::podajDaneNowegoAdresata(int idOstatniegoAdresata)
 {
     Adresat adresat;
 
-    adresat.ustawIdAdresata(++idOstatniegoAdresata);
-    adresat.ustawIdZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+    adresat.ustawIdAdresata(plikZAdresatami.pobierzIdOstatniegoAdresata() + 1);
+    adresat.ustawIdZalogowanegoUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 
     cout << "Podaj imie: ";
     adresat.ustawImie(zamienPierwszaLitereNaDuzaAPozostaleNaMale(MetodyPomocnicze::wczytajLinie()));

@@ -16,7 +16,7 @@ class PlikZAdresatami
     Adresat adresat;
     const string nazwaPlikuZAdresatami;
     int idOstatniegoAdresata;
-    int idZalogowanego;
+    //int idZalogowanego;
     //UzytkownikManager uzytkownikManager;
 
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
@@ -26,12 +26,13 @@ class PlikZAdresatami
 
     public:
 
-    PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI) {};
-    vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI)
+    {
+
+    };
+    vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     int pobierzIdOstatniegoAdresata();
     void ustawIdOstatniegoAdresata(int nowyOstatniAdresat);
-    void ustawIdZalogowanego(int zalogowany);
-    int pobierzIdZalogowanego();
     string pobierzNazwePlikuZAdresatami();
     };
 
