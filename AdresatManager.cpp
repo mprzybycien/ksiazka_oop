@@ -5,34 +5,37 @@ void AdresatManager::wypiszWszyskichAdresatow()
 {
     for (int i = 0; i < adresaci.size(); i++)
     {
-       cout << adresaci[i].pobierzIdAdresata() <<endl;
-       cout << adresaci[i].pobierzIdUzytkownika() <<endl;
-       cout << adresaci[i].pobierzImie() <<endl;
-       cout << adresaci[i].pobierzNazwisko() <<endl;
-       cout << adresaci[i].pobierzNumerTelefonu() <<endl;
-       cout << adresaci[i].pobierzEmail() <<endl;
-       cout << adresaci[i].pobierzAdres() <<endl <<endl;
+        cout << adresaci[i].pobierzIdAdresata() <<endl;
+        cout << adresaci[i].pobierzIdUzytkownika() <<endl;
+        cout << adresaci[i].pobierzImie() <<endl;
+        cout << adresaci[i].pobierzNazwisko() <<endl;
+        cout << adresaci[i].pobierzNumerTelefonu() <<endl;
+        cout << adresaci[i].pobierzEmail() <<endl;
+        cout << adresaci[i].pobierzAdres() <<endl <<endl;
     }
+    system("pause");
 }
 
 void AdresatManager::dodajAdresata()
 {
     Adresat adresat;
 
-    //system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
     int zalogowany, ostatni;
 
-    adresat = podajDaneNowegoAdresata(plikZAdresatami.pobierzIdOstatniegoAdresata());
-
-
+    adresat = podajDaneNowegoAdresata();
     adresaci.push_back(adresat);
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
+    cout << endl << "Poprawnie dodano nowy kontakt." <<endl;
+    system("pause");
+
 
 }
 
-Adresat AdresatManager::podajDaneNowegoAdresata(int idOstatniegoAdresata)
+Adresat AdresatManager::podajDaneNowegoAdresata()
 {
+    int idOstatniegoAdresata = plikZAdresatami.pobierzIdOstatniegoAdresata();
+
     Adresat adresat;
 
     adresat.ustawIdAdresata(idOstatniegoAdresata + 1);
@@ -64,14 +67,4 @@ string AdresatManager::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst)
         tekst[0] = toupper(tekst[0]);
     }
     return tekst;
-}
-
-
-bool AdresatManager::czyPlikJestPusty(fstream &plikTekstowy)
-{
-    plikTekstowy.seekg(0, ios::end);
-    if (plikTekstowy.tellg() == 0)
-        return true;
-    else
-        return false;
 }

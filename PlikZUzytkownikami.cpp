@@ -43,7 +43,6 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
 
 }
 
-
 string PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik)
 {
     string liniaZDanymiUzytkownika = "";
@@ -69,7 +68,7 @@ vector <Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku()
             uzytkownik = pobierzDaneUzytkownika(daneJednegoUzytkownikaOddzielonePionowymiKreskami);
             uzytkownicy.push_back(uzytkownik);
         }
-    plikTekstowy.close();
+        plikTekstowy.close();
     }
     return uzytkownicy;
 }
@@ -124,7 +123,7 @@ void PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik>
 
             if (itr == itrKoniec)
             {
-               plikTekstowy << liniaZDanymiUzytkownika;
+                plikTekstowy << liniaZDanymiUzytkownika;
             }
             else
             {

@@ -10,6 +10,7 @@ string MetodyPomocnicze::konwerjsaIntNaString(int liczba)
 
 string MetodyPomocnicze::wczytajLinie()
 {
+    cin.ignore();
     string wejscie = "";
     getline(cin, wejscie);
     return wejscie;
@@ -20,6 +21,5 @@ int MetodyPomocnicze::konwersjaStringNaInt(string liczba)
     int liczbaInt;
     istringstream iss(liczba);
     iss >> liczbaInt;
-
     return liczbaInt;
 }

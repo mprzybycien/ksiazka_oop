@@ -16,26 +16,20 @@ using namespace std;
 class AdresatManager
 {
 
-const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
-PlikZAdresatami plikZAdresatami;
-
-vector <Adresat> adresaci;
-
-Adresat podajDaneNowegoAdresata(int idOstatniegoAdresata); /*Podaæ metode do pobierania Id ostatniego adresata*/
-
-string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
-bool czyPlikJestPusty(fstream &plikTekstowy);
-
+    const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
+    PlikZAdresatami plikZAdresatami;
+    vector <Adresat> adresaci;
+    Adresat podajDaneNowegoAdresata();
+    string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
 
 public:
-AdresatManager(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika) :
-    plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
-{
-    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
-};
-
-void wypiszWszyskichAdresatow();
-void dodajAdresata();
+    AdresatManager(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika) :
+        plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
+    {
+        adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+    };
+    void wypiszWszyskichAdresatow();
+    void dodajAdresata();
 
 };
 

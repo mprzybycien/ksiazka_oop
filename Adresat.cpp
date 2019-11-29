@@ -4,7 +4,7 @@
 void Adresat::ustawIdAdresata(int noweIdAdresata)
 {
     if (noweIdAdresata >= 0)
-    idAdresata = noweIdAdresata;
+        idAdresata = noweIdAdresata;
 }
 
 void Adresat::ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytkownika)

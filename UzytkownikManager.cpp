@@ -1,6 +1,5 @@
 #include "UzytkownikManager.h"
 
-
 Uzytkownik UzytkownikManager::podajDaneNowegoUzytkownika()
 {
     Uzytkownik uzytkownik;
@@ -13,7 +12,8 @@ Uzytkownik UzytkownikManager::podajDaneNowegoUzytkownika()
         cout << "Podaj login: ";
         login = MetodyPomocnicze::wczytajLinie();
         uzytkownik.ustawLogin(login);
-    } while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
+    }
+    while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
 
     cout << "Podaj haslo: ";
     haslo = MetodyPomocnicze::wczytajLinie();
@@ -43,7 +43,6 @@ bool UzytkownikManager::czyIstniejeLogin(string login)
     return false;
 }
 
-
 void UzytkownikManager::rejestracjaUzytkownika()
 {
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
@@ -60,15 +59,15 @@ void UzytkownikManager::wypiszWszyskieKontakty()
 {
     for (int i = 0; i < uzytkownicy.size(); i++)
     {
-       cout << uzytkownicy[i].pobierzId() <<endl;
-       cout << uzytkownicy[i].pobierzLogin() <<endl;
-       cout << uzytkownicy[i].pobierzHaslo() <<endl<<endl;
+        cout << uzytkownicy[i].pobierzId() <<endl;
+        cout << uzytkownicy[i].pobierzLogin() <<endl;
+        cout << uzytkownicy[i].pobierzHaslo() <<endl<<endl;
     }
+    system("pause");
 }
 
 int UzytkownikManager::logowanieUzytkownika()
 {
-
     string log = "", pass = "";
 
     cout << endl << "Podaj login: ";
@@ -89,8 +88,6 @@ int UzytkownikManager::logowanieUzytkownika()
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
                     idZalogowanegoUzytkownika = itr -> pobierzId();
-                    cout << "id Zalgoowanego = " << idZalogowanegoUzytkownika << endl;
-                    system("pause");
                     return idZalogowanegoUzytkownika;
                 }
             }
@@ -109,11 +106,10 @@ void UzytkownikManager::zmianaHaslaZalogowanegoUzytkownika()
 {
     string noweHaslo = "";
     cout << "Podaj nowe haslo: ";
-    //PlikZAdresatami plikZAdresatami;
     noweHaslo = MetodyPomocnicze::wczytajLinie();
     for (vector <Uzytkownik>::iterator itr = uzytkownicy.begin(); itr != uzytkownicy.end(); itr++)
     {
-        if (itr -> pobierzId() == idZalogowanegoUzytkownika /*plikZAdresatami.pobierzIdZalogowanego()*/)
+        if (itr -> pobierzId() == idZalogowanegoUzytkownika)
         {
             itr -> ustawHaslo(noweHaslo);
             cout << "Haslo zostalo zmienione." << endl << endl;
@@ -136,17 +132,11 @@ int UzytkownikManager::pobierzIdZalogowanegoUzytkownika()
 {
     return idZalogowanegoUzytkownika;
 }
-/*
-int UzytkownikManager::pobierzIdZalogowanegoUzytkownika()
-{
-    return idZalogowanegoUzytkownika;
-}
 
-void UzytkownikManager::zapiszIdZalogowanegoUzytkownikaDoPliku()
+void UzytkownikManager::ustawIdZalogowanegoUzytkownika()
 {
-    fstream plikTekstowy;
-    plikTekstowy.open("IdZalogowanego.txt", ios::out);
-    plikTekstowy << idZalogowanegoUzytkownika;
-    plikTekstowy.close();
+    idZalogowanegoUzytkownika = 0;
+    system("cls");
+    cout << "Poprawnie wylogowano." << endl;
+    system("pause");
 }
-*/

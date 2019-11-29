@@ -28,12 +28,7 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
 {
     uzytkownikManager.zmianaHaslaZalogowanegoUzytkownika();
 }
-/*
-void KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
-{
-    adresatManager.wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
-}
-*/
+
 void KsiazkaAdresowa::wypiszWszyskichAdresatow()
 {
     adresatManager -> wypiszWszyskichAdresatow();
@@ -42,4 +37,16 @@ void KsiazkaAdresowa::wypiszWszyskichAdresatow()
 void KsiazkaAdresowa::dodajAdresata()
 {
     adresatManager -> dodajAdresata();
+}
+
+bool KsiazkaAdresowa::czyUzytkownikSieZalogowal()
+{
+    uzytkownikManager.czyUzytkownikSieZalogowal();
+}
+
+void KsiazkaAdresowa::wylogujUzytkownika()
+{
+    uzytkownikManager.ustawIdZalogowanegoUzytkownika();
+    delete adresatManager;
+    adresatManager = NULL;
 }

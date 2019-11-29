@@ -8,16 +8,6 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
     Adresat bierzacyAdresat;
     vector <Adresat> wektorAdresatow;
 
-    ifstream plikTekstowy_i;
-    plikTekstowy_i.open(nazwaPlikuZAdresatami.c_str());
-    if (!plikTekstowy_i)
-    idOstatniegoAdresata = 0;
-    plikTekstowy_i.close();
-
-    cout << idOstatniegoAdresata << endl;
-    system("pause");
-
-
     plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::in);
 
     if (plikTekstowy.good() == true)
@@ -31,17 +21,14 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
             }
         }
         daneOstaniegoAdresataWPliku = daneJednegoAdresataOddzielonePionowymiKreskami;
+        idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku);
     }
     else
+    {
         cout << "Nie udalo sie otworzyc pliku i wczytac danych." << endl;
-
+        idOstatniegoAdresata = 0;
+    }
     plikTekstowy.close();
-
-    if(czyPlikJestPusty(plikTekstowy) == true)
-    idOstatniegoAdresata = 0;
-    else
-    idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku);
-
     return wektorAdresatow;
 }
 
@@ -160,7 +147,6 @@ void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
         cout << "Nie udalo sie otworzyc pliku i zapisac w nim danych." << endl;
     }
     plikTekstowy.close();
-    system("pause");
 }
 
 string PlikZAdresatami::zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat)
