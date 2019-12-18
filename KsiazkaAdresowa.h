@@ -29,7 +29,6 @@ public:
     void rejestracjaUzytkownika();
     void wypiszWszyskieKontakty();
     void logowanieUzytkownika();
-    void zmianaHaslaZalogowanegoUzytkownika();
     void wypiszWszyskichAdresatow();
     void dodajAdresata();
     bool czyUzytkownikSieZalogowal();
@@ -38,6 +37,7 @@ public:
     void wyszukajAdresatowPoNazwisku();
     void edytujAdresata();
     void usunAdresata();
+    void zmianaHaslaZalogowanegoUzytkownika();
 
 };
 

@@ -61,6 +61,9 @@ int main()
                 case 6:
                     ksiazkaAdresowa.usunAdresata();
                     break;
+                case 7:
+                    ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
+                    break;
                 case 9:
                     ksiazkaAdresowa.wylogujUzytkownika();
                     break;

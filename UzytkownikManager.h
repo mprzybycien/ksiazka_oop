@@ -32,10 +32,10 @@ public:
     void wypiszWszyskieKontakty();
     void wczytajUzytkownikowZPliku();
     int logowanieUzytkownika();
-    void zmianaHaslaZalogowanegoUzytkownika();
     bool czyUzytkownikSieZalogowal();
     int pobierzIdZalogowanegoUzytkownika();
     void ustawIdZalogowanegoUzytkownika();
+    void zmianaHaslaZalogowanegoUzytkownika();
 };
 
 #endif
