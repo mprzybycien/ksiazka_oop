@@ -10,7 +10,6 @@ bool PlikZUzytkownikami::czyPlikJestPusty()
         plikTekstowy.close();
         return true;
     }
-
     else
     {
         plikTekstowy.close();
@@ -138,3 +137,4 @@ void PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik>
     }
     plikTekstowy.close();
 }
+
