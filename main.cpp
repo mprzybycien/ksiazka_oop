@@ -36,6 +36,7 @@ int main()
                 cout << "3. Wyszukaj adresatow po imieniu" << endl;
                 cout << "4. Wyszukaj adresatow po nazwisku" << endl;
                 cout << "5. Edytuj adresata" << endl;
+                cout << "6. Usun adresata" << endl;
                 cout << "9. Wyloguj sie" <<endl;
                 cout << "_______________________" << endl;
                 cout << "Wybierz opcje:" << endl;
@@ -56,6 +57,9 @@ int main()
                     break;
                 case 5:
                     ksiazkaAdresowa.edytujAdresata();
+                    break;
+                case 6:
+                    ksiazkaAdresowa.usunAdresata();
                     break;
                 case 9:
                     ksiazkaAdresowa.wylogujUzytkownika();
