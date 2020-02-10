@@ -1,7 +1,6 @@
 bin/
 obj/
-ksiazka_adresowa_OOP.*
+ksiazka_decydujace_starcie.*
 uzytkownicy.txt
 ks-strukt.cpp
 adresaci.txt
-IdZalogowanego.txt
