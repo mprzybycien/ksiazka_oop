@@ -264,8 +264,11 @@ void AdresatManager::usunAdresata()
             znak = MetodyPomocnicze::wczytajZnak();
             if (znak == 't')
             {
+                /*
                 numerLiniiUsuwanegoAdresata = plikZAdresatami.zwrocNumerLiniiSzukanegoAdresata(idUsuwanegoAdresata);
                 plikZAdresatami.usunWybranaLinieWPliku(numerLiniiUsuwanegoAdresata);
+                */
+                plikZAdresatami.usunWybranaLinieWPliku(idUsuwanegoAdresata);
                 adresaci.erase(itr);
                 plikZAdresatami.ustawIdOstatniegoAdresata(podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsuwanegoAdresata, plikZAdresatami.pobierzIdOstatniegoAdresata()));
                 cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
